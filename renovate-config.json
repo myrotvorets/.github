@@ -67,7 +67,8 @@
         },
         {
             "matchManagers": ["github-actions"],
-            "addLabels": ["github-actions"]
+            "addLabels": ["github-actions"],
+            "automerge": true
         }
     ],
     "hostRules": [
