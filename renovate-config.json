@@ -1,0 +1,73 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "labels": ["dependencies"],
+    "dependencyDashboard": true,
+    "dependencyDashboardAutoclose": true,
+    "lockFileMaintenance": {
+        "enabled": true,
+        "recreateClosed": true,
+        "rebaseStalePrs": true,
+        "branchTopic": "lock-file-maintenance",
+        "commitMessageAction": "Lock file maintenance",
+        "schedule": ["before 5am on monday"],
+        "prBodyDefinitions": {
+            "Change": "All locks refreshed"
+        }
+    },
+    "postUpdateOptions": ["npmDedupe"],
+    "rangeStrategy": "update-lockfile",
+    "rollbackPrs": true,
+    "semanticCommits": "enabled",
+    "gitAuthor": "Myrotvorets <support+renovate@myrotvorets.center>",
+    "packageRules": [
+        {
+            "matchDepTypes": ["devDependencies"],
+            "matchPackagePatterns": ["eslint", "prettier"],
+            "addLabels": ["linters"],
+            "groupName": "Linters",
+            "groupSlug": "linters",
+            "automerge": true
+        },
+        {
+            "matchPackagePatterns": ["opentelemetry"],
+            "groupName": "OpenTelemetry",
+            "groupSlug": "opentelemetry"
+        },
+        {
+            "matchDepTypes": ["devDependencies"],
+            "addLabels": ["dev-dependencies"],
+            "automerge": true
+        },
+        {
+            "matchDepTypes": ["dependencies"],
+            "addLabels": ["prod-dependencies"],
+            "stabilityDays": 3
+        },
+        {
+            "matchDepTypes": ["devDependencies"],
+            "matchUpdateTypes": ["patch", "minor"],
+            "groupName": "devDependencies (non-major)",
+            "groupSlug": "dev-deps"
+        },
+        {
+            "matchUpdateTypes": ["lockFileMaintenance"],
+            "automerge": true
+        },
+        {
+            "matchManagers": ["node"],
+            "addLabels": ["javascript"]
+        },
+        {
+            "matchManagers": ["composer"],
+            "addLabels": ["php"]
+        },
+        {
+            "matchManagers": ["docker"],
+            "addLabels": ["docker"]
+        },
+        {
+            "matchManagers": ["github-actions"],
+            "addLabels": ["github-actions"]
+        }
+    ]
+}
