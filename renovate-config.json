@@ -21,14 +21,6 @@
     "gitAuthor": "Myrotvorets <support+renovate@myrotvorets.center>",
     "packageRules": [
         {
-            "matchDepTypes": ["devDependencies"],
-            "matchPackagePatterns": ["eslint", "prettier"],
-            "addLabels": ["linters"],
-            "groupName": "Linters",
-            "groupSlug": "linters",
-            "automerge": true
-        },
-        {
             "matchPackagePatterns": ["opentelemetry"],
             "groupName": "OpenTelemetry",
             "groupSlug": "opentelemetry"
@@ -48,6 +40,28 @@
             "matchUpdateTypes": ["patch", "minor"],
             "groupName": "devDependencies (non-major)",
             "groupSlug": "dev-deps"
+        },
+        {
+            "matchDepTypes": ["devDependencies"],
+            "matchPackagePatterns": ["eslint", "prettier"],
+            "addLabels": ["linters"],
+            "groupName": "Linters",
+            "groupSlug": "linters",
+            "automerge": true
+        },
+        {
+            "matchDepTypes": ["devDependencies"],
+            "matchPackagePatterns": ["jest"],
+            "addLabels": ["testing"],
+            "groupName": "Testing",
+            "groupSlug": "testing",
+            "automerge": true
+        },
+        {
+            "matchPackagePatterns": ["typescript", "ts-node"],
+            "groupName": "TS",
+            "groupSlug": "typescript",
+            "automerge": true
         },
         {
             "matchUpdateTypes": ["lockFileMaintenance"],
