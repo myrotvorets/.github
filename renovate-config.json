@@ -59,7 +59,7 @@
         },
         {
             "matchPackagePatterns": ["typescript", "ts-node"],
-            "groupName": "TS",
+            "groupName": "TypeScript",
             "groupSlug": "typescript",
             "automerge": true
         },
