@@ -51,9 +51,9 @@
         },
         {
             "matchDepTypes": ["devDependencies"],
-            "matchPackagePatterns": ["jest"],
+            "matchPackagePatterns": ["jest", "nock", "mocha", "sinon"],
             "addLabels": ["testing"],
-            "groupName": "Testing",
+            "groupName": "Testing Tools",
             "groupSlug": "testing",
             "automerge": true
         },
