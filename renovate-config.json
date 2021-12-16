@@ -21,6 +21,11 @@
     "gitAuthor": "Myrotvorets <support+renovate@myrotvorets.center>",
     "packageRules": [
         {
+            "matchManagers": ["npm"],
+            "matchPackageNames": ["@types/node"],
+            "versioning": "node"
+        },
+        {
             "matchPackagePatterns": ["opentelemetry"],
             "groupName": "OpenTelemetry",
             "groupSlug": "opentelemetry"
@@ -68,7 +73,7 @@
             "automerge": true
         },
         {
-            "matchManagers": ["node"],
+            "matchManagers": ["npm"],
             "addLabels": ["javascript"]
         },
         {
