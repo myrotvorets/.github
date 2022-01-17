@@ -5,6 +5,7 @@
     "dependencyDashboardAutoclose": true,
     "lockFileMaintenance": {
         "enabled": true,
+        "automerge": true,
         "recreateClosed": true,
         "rebaseStalePrs": true,
         "branchTopic": "lock-file-maintenance",
@@ -86,10 +87,19 @@
         },
         {
             "matchManagers": ["github-actions"],
-            "addLabels": ["github-actions"],
-            "automerge": true
+            "addLabels": ["github-actions"]
+        },
+        {
+            "matchDepTypes": ["action"],
+            "pinDigests": true
         }
     ],
+    "docker": {
+        "pinDigests": true
+    },
+    "pin": {
+        "automerge": true
+    },
     "hostRules": [
         {
             "matchHost": "https://npm.pkg.github.com/",
