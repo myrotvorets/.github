@@ -70,7 +70,7 @@
             "automerge": true
         },
         {
-            "matchPackageNames": ["react", "react-dom"],
+            "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"],
             "groupName": "React",
             "groupSlug": "react"
         },
