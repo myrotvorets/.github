@@ -87,7 +87,7 @@
             "addLabels": ["php"]
         },
         {
-            "matchManagers": ["docker"],
+            "matchManagers": ["dockerfile", "docker-compose"],
             "addLabels": ["docker"]
         },
         {
