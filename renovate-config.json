@@ -79,28 +79,28 @@
             "automerge": true
         },
         {
-            "matchManagers": ["npm"],
-            "addLabels": ["javascript"]
-        },
-        {
-            "matchManagers": ["composer"],
-            "addLabels": ["php"]
-        },
-        {
             "matchManagers": ["dockerfile", "docker-compose"],
-            "addLabels": ["docker"]
-        },
-        {
-            "matchManagers": ["github-actions"],
-            "addLabels": ["github-actions"]
-        },
-        {
-            "matchDepTypes": ["action"],
-            "pinDigests": true
+            "matchPackagePatterns": ["^myrotvorets/"],
+            "automerge": true
         }
     ],
-    "docker": {
+    "github-actions": {
+        "addLabels": ["github-actions"],
         "pinDigests": true
+    },
+    "docker": {
+        "pinDigests": true,
+        "addLabels": ["docker"]
+    },
+    "docker-compose": {
+        "pinDigests": true,
+        "addLabels": ["docker"]
+    },
+    "composer": {
+        "addLabels": ["php"]
+    },
+    "npm": {
+        "addLabels": ["javascript"]
     },
     "pin": {
         "automerge": true
