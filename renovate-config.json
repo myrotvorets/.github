@@ -19,7 +19,6 @@
     "rangeStrategy": "update-lockfile",
     "rollbackPrs": true,
     "semanticCommits": "enabled",
-    "gitAuthor": "Myrotvorets <support+renovate@myrotvorets.center>",
     "packageRules": [
         {
             "matchManagers": ["npm"],
@@ -112,5 +111,6 @@
         }
     ],
     "npmrc": "@organizationName:registry=https://npm.pkg.github.com/",
-    "npmrcMerge": true
+    "npmrcMerge": true,
+    "gitAuthor": "Myrotvorets <support+renovate@myrotvorets.center>"
 }
