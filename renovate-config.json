@@ -79,7 +79,7 @@
             "automerge": true
         },
         {
-            "matchManagers": ["dockerfile", "docker-compose"],
+            "matchManagers": ["dockerfile", "docker-compose", "github-actions"],
             "matchPackagePatterns": ["^myrotvorets/"],
             "automerge": true
         }
@@ -92,19 +92,16 @@
         "pinDigests": true,
         "addLabels": ["docker"]
     },
-    "docker-compose": {
-        "pinDigests": true,
-        "addLabels": ["docker"]
-    },
-    "composer": {
+    "php": {
         "addLabels": ["php"]
     },
-    "npm": {
+    "js": {
         "addLabels": ["javascript"]
     },
     "pin": {
         "automerge": true
     },
+    "suppressNotifications": [],
     "hostRules": [
         {
             "matchHost": "https://npm.pkg.github.com/",
