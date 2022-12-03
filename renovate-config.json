@@ -81,6 +81,16 @@
             "matchManagers": ["dockerfile", "docker-compose", "github-actions"],
             "matchPackagePatterns": ["^myrotvorets/"],
             "automerge": true
+        },
+        {
+            "matchManagers": ["github-actions"],
+            "matchPackagePatterns": ["^github/", "^actions/"],
+            "automerge": true
+        },
+        {
+            "matchManagers": ["dockerfile", "docker-compose"],
+            "matchPackageNames": ["wordpress", "mariadb"],
+            "automerge": true
         }
     ],
     "github-actions": {
