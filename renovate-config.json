@@ -74,6 +74,11 @@
             "groupSlug": "react"
         },
         {
+            "matchPackagePrefixes": ["@wordpress/"],
+            "groupName": "WordPress JS",
+            "groupSlug": "wordpress-js"
+        },
+        {
             "matchUpdateTypes": ["lockFileMaintenance"],
             "automerge": true
         },
