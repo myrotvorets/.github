@@ -31,9 +31,14 @@
             "groupSlug": "opentelemetry"
         },
         {
+            "matchDepTypes": ["peerDependencies"],
+            "rangeStrategy": "widen"
+        },
+        {
             "matchDepTypes": ["devDependencies", "require-dev"],
             "addLabels": ["dev-dependencies"],
-            "automerge": true
+            "automerge": true,
+            "rangeStrategy": "bump"
         },
         {
             "matchDepTypes": ["dependencies"],
@@ -56,7 +61,7 @@
         },
         {
             "matchDepTypes": ["devDependencies"],
-            "matchPackagePatterns": ["jest", "nock", "mocha", "sinon", "chai", "chai-as-promised", "chai-subset", "testdouble"],
+            "matchPackagePatterns": ["jest", "nock", "mocha", "sinon", "chai", "chai-as-promised", "chai-subset", "testdouble", "c8"],
             "addLabels": ["testing"],
             "groupName": "Testing Tools",
             "groupSlug": "testing",
