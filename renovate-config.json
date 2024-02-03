@@ -124,6 +124,9 @@
     "pin": {
         "automerge": true
     },
+    "regex": {
+        "pinDigests": true
+    },
     "suppressNotifications": [],
     "hostRules": [
         {
