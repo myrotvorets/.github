@@ -19,11 +19,16 @@
     "rangeStrategy": "update-lockfile",
     "rollbackPrs": true,
     "semanticCommits": "enabled",
+    "pinDigests": true,
     "packageRules": [
         {
             "matchManagers": ["npm"],
             "matchPackageNames": ["@types/node"],
             "versioning": "node"
+        },
+        {
+            "matchDatasources": ["docker"],
+            "addLabels": ["docker"]
         },
         {
             "matchPackagePatterns": ["opentelemetry"],
@@ -113,10 +118,6 @@
     "github-actions": {
         "addLabels": ["github-actions"],
         "pinDigests": true
-    },
-    "docker": {
-        "pinDigests": true,
-        "addLabels": ["docker"]
     },
     "php": {
         "addLabels": ["php"]
