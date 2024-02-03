@@ -36,14 +36,9 @@
             "groupSlug": "opentelemetry"
         },
         {
-            "matchDepTypes": ["peerDependencies"],
-            "rangeStrategy": "widen"
-        },
-        {
             "matchDepTypes": ["devDependencies", "require-dev"],
             "addLabels": ["dev-dependencies"],
-            "automerge": true,
-            "rangeStrategy": "bump"
+            "automerge": true
         },
         {
             "matchDepTypes": ["dependencies"],
@@ -66,7 +61,7 @@
         },
         {
             "matchDepTypes": ["devDependencies"],
-            "matchPackagePatterns": ["jest", "nock", "mocha", "sinon", "chai", "chai-as-promised", "chai-subset", "testdouble", "c8"],
+            "matchPackagePatterns": ["jest", "nock", "mocha", "sinon"],
             "addLabels": ["testing"],
             "groupName": "Testing Tools",
             "groupSlug": "testing",
@@ -74,7 +69,7 @@
         },
         {
             "matchPackagePatterns": ["typescript", "ts-node"],
-            "groupName": "TypeScript-related packages",
+            "groupName": "TypeScript",
             "groupSlug": "typescript",
             "automerge": true
         },
@@ -103,13 +98,6 @@
             "automerge": true
         },
         {
-            "matchManagers": ["github-actions"],
-            "matchPackagePatterns": ["^docker/"],
-            "groupName": "Docker-related actions",
-            "groupSlug": "docker-actions",
-            "automerge": true
-        },
-        {
             "matchManagers": ["dockerfile", "docker-compose"],
             "matchPackageNames": ["wordpress", "mariadb"],
             "automerge": true
@@ -118,6 +106,14 @@
     "github-actions": {
         "addLabels": ["github-actions"],
         "pinDigests": true
+    },
+    "dockerfile": {
+        "pinDigests": true,
+        "addLabels": ["docker"]
+    },
+    "docker-compose": {
+        "pinDigests": true,
+        "addLabels": ["docker"]
     },
     "php": {
         "addLabels": ["php"]
@@ -134,12 +130,11 @@
             "matchHost": "https://npm.pkg.github.com/",
             "hostType": "npm",
             "encrypted": {
-                "token": "wcFMA/xDdHCJBTolARAAlEpRJZUesKHPzKu6lP29Loht1ZZNRzvMF/HSKV4D4qbVEHmbasuCmhy5FleSs/Wgu5CwhBC3tj+uNDEsuxkz+oXM5QdwgEaJjBdrgHj5n8WRJCOg8WfX8DUZU3voYCOB/ZxSpHP5g/Q+qmVZTaA6fKmfcIo/CPiLnIP0REhcia8GM7JZ6v1nCGsllfwI1bu+ey5o1lVIqJEf7oLuEk0yMx6mkqaCdekYVhclmvrYxS23tmTKlqLlTQaQUn6jBJFBcAKbVJe3tn6Caz3RDa/Q3Epx4WZF9xKmI8SYcJiKNeL0RhTHF6WhzmKhmeKrN4PPX3+7qo30SvkyRcO/FBSLXXa9q2DIWzmMGrShBspLZdXcS045ut88bNS2Ugns1KyO+mCsou9FkG68NEQm6FjAyhP6SgHWys9+xFfd8+h5jHHe/iD7teC/N+XOu9lMpOXlj5VkBWJq5q55RY4x6EtYm3xOY7v9hi+vP5U8Jua6khuoUrZ/8InB1jBTEQAXxEADnA9EVfHytB2XDrAuHCQ6Q3q7ENzjOQcP1QYdHlq9PVmK5wdZ6/6J/pk3fGT5tZwsv6+phJAMtV348kytSxr4/GF6Z5HZMfUpczkF2hLcPwslTpaBiTEpGblKdqcNrI3pP9z1xi2QrOt6RVIT54aR+O4tmpTjPjb0ngnECN6ve2nSegG9IGX/pZX/TkqDWPz2fTnApE+OaFOyqoOZtmCwuMJqB99B05qw+akVdjP7LhWWKmsudyyP3CvBXkgMUXQ25IFVpHa3KBwIbLHApf21bcXuEenPPs4n9oLE1eM3YfGdKPkoaHxHkTDGgSvxEyk3Q7TdJRYfltJSCRNP"
+                "token": "wcFMA/xDdHCJBTolAQ//dDpvJQW0P30strsKxRA6zqgGao7Yd21851wgw82xpFYQzh6p6dB+VXQ+eNVthoLIaYappVIFp1C4BXoySG5cw4ovcWxF3GnXjgPBK+JoHXh1zgrG5Sb19muGZ6kzfChxfpVMGk28d4/hJ0NIa4PllGt4Am9hWNL8ZhQLm54n35lGIyrDdYmKANYNlxvLrkZybjXwZfZnXabvwOo8l/crqdV7YS4FWAK8kcDLWv0SMAdVy6KJywoNLgX4v7Uqs2Bn9vmpm4EbI78bp+nVZEBF14ZsK+tiRw1i6R5ciaQI1RJdqxVc8f0maR1vo7Qznf8D1zlhaUXxCRPjJ/0CbE6b8mqICL0PYufUgIpgfZLRAkoeYlcI5ZoT81p6qKAkjMhDSLEyYddjRToTm4eARHahTX16dC4SSP+aAdg6jJaXxNUWU/bSNqL6LZD18ZrBZScUTuf94+1yPUczrzcyg0R008DJVwrJTIFoS+hvyNxTcperbiOCWur71/huTSi3wEzKM9bhPFuP6UH0UnlEwsHfgO4QdFTIaS/RJjbopBfQIUMtTH5sgIYoRxktEhDNPloqxHJlxYHFrmLeYaUV2vrZtayUbJTdllq5oUoy1OXk6KQk1U0wo1w/qaw6SYT2XLVTSR1rT3pGDbGJAk4yBrmMU6NxSw51Xr1f/f8rm87HvqvSegGua6ig81ykfNllg7WiOC9jdJv4cfrkjDj/82Ck5y0ed013hYtGXn2+5d66TpzqgD9sqJ4zwSkY2tRwUtv9rcMlrVGDpVSXFixQrB6etuYgGSyGFrz8DpY1SSRkQZL5W4W2TdlAPhKnx3Hchgwv8bpEtH9XvLi4QIoc"
             }
         }
     ],
     "npmrc": "@organizationName:registry=https://npm.pkg.github.com/",
     "npmrcMerge": true,
-    "gitAuthor": "Myrotvorets <support+renovate@myrotvorets.center>",
-    "osvVulnerabilityAlerts": true
+    "gitAuthor": "Myrotvorets <support+renovate@myrotvorets.center>"
 }
