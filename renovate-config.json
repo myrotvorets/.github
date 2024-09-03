@@ -36,6 +36,11 @@
             "groupSlug": "opentelemetry"
         },
         {
+            "matchPackagePatterns": ["bugsnag", "@bugsnag"],
+            "groupName": "Bugsnag",
+            "groupSlug": "bugsnag"
+        },
+        {
             "matchDepTypes": ["devDependencies", "require-dev"],
             "addLabels": ["dev-dependencies"],
             "automerge": true
@@ -94,7 +99,7 @@
         },
         {
             "matchManagers": ["github-actions"],
-            "matchPackagePatterns": ["^github/", "^actions/"],
+            "matchPackagePatterns": ["^github/", "^actions/", "^docker/", "^step-security/"],
             "automerge": true
         },
         {
