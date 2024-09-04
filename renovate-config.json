@@ -138,9 +138,7 @@
         {
             "matchHost": "https://npm.pkg.github.com/",
             "hostType": "npm",
-            "encrypted": {
-                "token": "{{ GITHUB_PKG_TOKEN }}"
-            }
+            "token": "{{ GITHUB_PKG_TOKEN }}"
         }
     ],
     "npmrc": "@organizationName:registry=https://npm.pkg.github.com/",
