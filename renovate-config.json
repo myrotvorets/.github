@@ -95,7 +95,8 @@
         {
             "matchManagers": ["dockerfile", "docker-compose", "github-actions"],
             "matchPackagePatterns": ["^myrotvorets/"],
-            "automerge": true
+            "automerge": true,
+            "pinDigests": true
         },
         {
             "matchManagers": ["github-actions"],
