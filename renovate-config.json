@@ -20,6 +20,7 @@
     "rollbackPrs": true,
     "semanticCommits": "enabled",
     "pinDigests": true,
+    "ignoreDeps": ["vimeo/psalm"],
     "packageRules": [
         {
             "matchManagers": ["npm"],
